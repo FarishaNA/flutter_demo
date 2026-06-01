@@ -6,7 +6,6 @@ import 'package:fashion_app/src/home/widgets/home_slider.dart';
 import 'package:fashion_app/src/home/widgets/home_tabs.dart';
 import 'package:fashion_app/src/products/widgets/explore_products.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
@@ -50,6 +49,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       appBar: const PreferredSize(
         preferredSize: Size.fromHeight(110),
@@ -70,23 +70,17 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             height: 10.h,
           ),
           const HomeCategoriesList(),
-
           SizedBox(
             height: 15.h,
           ),
-
           HomeTabs(tabController: _tabController),
-
-           SizedBox(
+          SizedBox(
             height: 15.h,
           ),
-
           const ExploreProducts(),
-
-           SizedBox(
+          SizedBox(
             height: 100.h,
           ),
-
         ],
       ),
     );

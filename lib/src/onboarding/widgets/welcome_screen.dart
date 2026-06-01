@@ -14,74 +14,90 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
+        body: SafeArea(
+      child: SingleChildScrollView(
+      child: Container(
       color: Kolors.kWhite,
       width: ScreenUtil().screenWidth,
-      height: ScreenUtil().screenHeight,
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-              SizedBox(
-              height: 100.h,
-            ),
-            Image.asset(R.ASSETS_IMAGES_GETSTARTED_PNG),
-            SizedBox(
-              height: 30.h,
-            ),
-            Text(
-              AppText.kWelcomeHeader,
-              textAlign: TextAlign.center,
-              style: appStyle(24, Kolors.kPrimary, FontWeight.bold),
-            ),
-            SizedBox(
-              height: 20.h,
-            ),
-            SizedBox(
-              width: ScreenUtil().screenWidth - 100,
-              child: Text(
-                AppText.kWelcomeMessage,
-                textAlign: TextAlign.center,
-                style: appStyle(11, Kolors.kGray, FontWeight.normal),
-              ),
-            ),
-            SizedBox(
-              height: 20.h,
-            ),
-            CustomButton(
-              text: AppText.kGetStarted,
-              btnHieght: 35,
-              radius: 20,
-              btnWidth: ScreenUtil().screenWidth - 100,
-              onTap: () {
-                ///TODO: uncomment the bool storage when the app is ready
-                // Storage().setBool('firstOpen', true);
-
-                context.go('/home');
-              },
-            ),
-            SizedBox(
-              height: 20.h,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ReusableText(
-                    text: "Already have an account?",
-                    style: appStyle(12, Kolors.kDark, FontWeight.normal)),
-                TextButton(
-                    onPressed: () {
-                      //navigate to login page 
-                      context.go('/login');
-                    },
-                    child: const Text(
-                      "Sign In",
-                      style: TextStyle(fontSize: 12, color: Colors.blue),
-                    ))
-              ],
-          )
-          ],
-        ),
+      constraints: BoxConstraints(
+        minHeight: ScreenUtil().screenHeight,
       ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SizedBox(
+            height: 40.h,
+          ),
+          ConstrainedBox(
+            constraints: BoxConstraints(
+              maxHeight: ScreenUtil().screenHeight * 0.4,
+            ),
+            child: Image.asset(
+              R.ASSETS_IMAGES_GETSTARTED_PNG,
+              fit: BoxFit.contain,
+            ),
+          ),
+          SizedBox(
+            height: 30.h,
+          ),
+          Text(
+            AppText.kWelcomeHeader,
+            textAlign: TextAlign.center,
+            style: appStyle(24, Kolors.kPrimary, FontWeight.bold),
+          ),
+          SizedBox(
+            height: 20.h,
+          ),
+          SizedBox(
+            width: ScreenUtil().screenWidth - 100,
+            child: Text(
+              AppText.kWelcomeMessage,
+              textAlign: TextAlign.center,
+              style: appStyle(11, Kolors.kGray, FontWeight.normal),
+            ),
+          ),
+          SizedBox(
+            height: 20.h,
+          ),
+          CustomButton(
+            text: AppText.kGetStarted,
+            btnHieght: 35,
+            radius: 20,
+            btnWidth: ScreenUtil().screenWidth - 100,
+            onTap: () {
+              ///TODO: uncomment the bool storage when the app is ready
+              // Storage().setBool('firstOpen', true);
+
+              context.go('/home');
+            },
+          ),
+          SizedBox(
+            height: 20.h,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ReusableText(
+                  text: "Already have an account?",
+                  style: appStyle(12, Kolors.kDark, FontWeight.normal)),
+              TextButton(
+                  onPressed: () {
+                    //navigate to login page 
+                     context.go('/login');
+                  },
+                  child: const Text(
+                    "Sign In",
+                    style: TextStyle(fontSize: 12, color: Colors.blue),
+                  ))
+            ],
+          ),
+          SizedBox(
+            height: 20.h,
+          ),
+        ],
+      ),
+    ),
+    ),
     ));
   }
 }

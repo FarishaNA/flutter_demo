@@ -12,6 +12,8 @@ class AppText {
   static const String kVerifyText = 'Please enter the code we just sent to email';
   static const String kCartErrorText = 'Please select size and color to proceed';
   static const String kSearch = 'Search';
+  static const String kSearchHint = 'Search For Latest Fashion';
+  static const String kSearchResults = 'Search Results';
 
   static const String kProfilePic = 'https://firebasestorage.googleapis.com/v0/b/authenification-b4dc9.appspot.com/o/uploads%2Favatar.png?alt=media&token=7da81de9-a163-4296-86ac-3194c490ce15';
   static const String kCollection = 'New Collection';
@@ -25,6 +27,7 @@ class AppText {
   static const String kPDetails = 'Product Details';
   static const String kConfirm = 'Confirm Payment';
   static const String kTrack = 'Track Order';
+  static const String kOrder = 'My Orders';
   static const String kOrderDetails = 'Order Details';
   static const String kPlaced = 'Order Placed';
   static const String kProgress = 'In Progress';
@@ -57,10 +60,6 @@ class AppText {
       "Your Wishlist awaits! Curate your dream looks and save favorites for later. It's the first step to making style aspirations a reality";
        static const String kOnboardHome =
       "Welcome to the ultimate fashion destination! Discover trends, shop your favorite styles, and elevate your wardrobe. Let's get started on your stylish journey today";
-
-  static String? get onboardingOneTitle => null;
-
-  static String? get onboardingTwoTitle => null;
 }
 
 // Your Wishlist awaits! Curate your dream looks and save favorites for later. It's the first step to making style aspirations a reality
